@@ -27,9 +27,6 @@ const port = yargs.argv.port || 8000
 const banner = `/*!
 * reveal.js ${pkg.version}
 * ${pkg.homepage}
-* MIT licensed
-*
-* Copyright (C) 2020 Hakim El Hattab, https://hakim.se
 */\n`
 
 // Prevents warnings from opening too many test pages

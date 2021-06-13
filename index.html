@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>How internet works</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,25 +16,111 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					
+					<h3>How the Internet Works</h3>
+					<p>
+						<small>Created by Tarun Rai Tara</small>
+					</p>
+				</section>
+				<section>
+					<h2>What is Internet?</h2>
+					<p>
+						Internet is an interconnected network of computers. Some of these computers are web servers, which are just specialized computers that contain and serve content from your favorite websites, and others are just the client devices we use everyday, like our laptops, tablets, and mobile phones. 	</p>
+				</section>
+				<section>
+					<h2>How does the Internet work?</h2>
+					<p>
+						The Internet works through a packet routing network in accordance with the Internet Protocol (IP), the Transport Control Protocol (TCP) and other protocols.	</p>
+				</section>
+
+				<section data-background-transition="zoom">
+					<section>
+						<h2>What's a Protocol</h2>
+						<p>A protocol is a set of rules specifying how computers should communicate with each other over a network. For example, the Transport Control Protocol has a rule that if one computer sends data to another computer, the destination computer should let the source computer know if any data was missing so the source computer can re-send it. Or the Internet Protocol which specifies how computers should route information to other computers by attaching addresses onto the data it sends.</p>
+					</section>
+					<section>
+						<h2>What's packet</h2>
+						<p>Data sent across the Internet is called a message. Before a message is sent, it is first split in many fragments called packets. These packets are sent independently of each other. The typical maximum packet size is between 1000 and 3000 characters. The Internet Protocol specifies how messages should be packetized.</p>
+					</section>
+					<section>
+						<h2>What’s a packet routing network?</h2>
+						<p>It is a network that routes packets from a source computer to a destination computer. The Internet is made up of a massive network of specialized computers called routers. Each router’s job is to know how to move packets along from their source to their destination.</p></section>
+					<section>
+						<h2>Some Facts About Packet</h2>
+						
+								<ul>
+								<li>Do Packets Arrive in order</li>
+								<li>Do packets always make to their destination</li>
+								</ul>
+							
+					</section>
+					<section>
+						<h2>What's a URL</h2>
+						<p>A Uniform Resource Locator (URL), colloquially termed a web address,is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it.
+							Most web browsers display the URL of a web page above the page in an address bar. A typical URL could have the form http://www.someWebsite.com/index.html, which indicates a protocol (http), a hostname (www.example.com), and a file name (index.html)
+						</p></section>
+				</section>
+
+				<section data-background-transition="zoom">
+					<section>
+						<h2>Steps Followed</h2>
+						<p>Your browser is what we call a “client application” and what this simply means is that its a program that allows you to make requests to different web sites and respond to the data that those web sites send back.</p>
+					</section>
+					<section>
+						<p>Each web server has its own unique ip address, lets say Our website has its own IP address, which is of form 192.172.44.55</p>
+					</section>
+					<section>
+						<p>When you type in the url of your website into your browser, your browser somehow needs to know that this URL (i.e. uniform resource locator) actually means the ip address 192.172.44.55. So what the browser does is that it contacts the DNS (domain name service) and looks up the ip address for that url. You can think of the DNS as a phone book or a directory</p></section>
+					</section>
+					<section>
+						<p>Once the ip address is retrieved, your browser attempts to connect to the web server by opening up a socket connection.</p>
+					</section>
+					<section>
+						<p>
+							Now that your browser and the server have a open connection with each other, your request to a specific article on your website can be made. But before your request can be sent over the internet, it has to follow a set of rules that describe how the request must be formatted. These set of rules are known as TCP/IP and the HTTP protocol.
+						</p>
+					</section>
+					<section>
+						<p>
+							Once all the packets of data arrive at the web server, the web server will look for the specific article, similar to how you’d look for a file in a cabinet drawer. Once the file has been located, the web server will chop up the response into data packets again, and send them back to your browser.
+						</p>
+					</section>
+					<section>
+						<p>
+							Finally, when all the data packets arrive back at your browser, your browser will reassemble all packets into the HTML, CSS, JavaScript, and image files that represent the article. 
+						</p>
+					</section>
+				<section>
+					<section>
+					<h2>what's DNS</h2>
+					<p>The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.</p></section>
+                <section>
+				   <p>Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).</p></section>
+				</section>
 			</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
 		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
 			});
+
 		</script>
 	</body>
 </html>
